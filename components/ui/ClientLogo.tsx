@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 interface ClientLogoProps {
   name: string;
@@ -13,12 +12,6 @@ const sizeClasses = {
   sm: 'w-8 h-8 text-xs',
   md: 'w-12 h-12 text-sm',
   lg: 'w-16 h-16 text-base',
-};
-
-const imageSizes = {
-  sm: 32,
-  md: 48,
-  lg: 64,
 };
 
 function getInitials(name: string): string {
@@ -59,13 +52,12 @@ export default function ClientLogo({ name, logoUrl, size = 'md' }: ClientLogoPro
   }
 
   return (
-    <div className={`${sizeClasses[size]} relative`}>
-      <Image
+    <div className={`${sizeClasses[size]} flex items-center justify-center`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={logoUrl}
         alt={`${name} logo`}
-        width={imageSizes[size]}
-        height={imageSizes[size]}
-        className="object-contain w-full h-full"
+        className="max-w-full max-h-full object-contain"
         onError={() => setImageError(true)}
       />
     </div>
