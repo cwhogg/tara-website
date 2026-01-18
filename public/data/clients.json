@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Propeller Health",
     "description": "Digital therapeutics company connecting inhalers to smartphone apps for chronic respiratory diseases",
-    "logoUrl": "/logos/propeller.svg",
+    "logoUrl": "https://logo.clearbit.com/propellerhealth.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "name": "Big Health",
     "description": "Digital therapeutics company offering clinically-validated, non-drug solutions for mental health",
-    "logoUrl": "/logos/bighealth.svg",
+    "logoUrl": "https://logo.clearbit.com/bighealth.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "iHealth",
     "description": "Connected health devices and digital health solutions for consumers and healthcare providers",
-    "logoUrl": "/logos/ihealth.svg",
+    "logoUrl": "https://logo.clearbit.com/ihealthlabs.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "name": "MedHelp",
     "description": "Leading health information platform connecting patients and healthcare professionals",
-    "logoUrl": "/logos/medhelp.svg",
+    "logoUrl": "https://logo.clearbit.com/medhelp.org",
     "category": "Digital Health",
     "featured": false
   },
@@ -35,7 +35,7 @@
     "id": "5",
     "name": "ZocDoc",
     "description": "Healthcare scheduling platform connecting patients with doctors and enabling instant booking",
-    "logoUrl": "/logos/zocdoc.svg",
+    "logoUrl": "https://logo.clearbit.com/zocdoc.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Color Genomics",
     "description": "Population health company making genetic testing accessible for hereditary cancer and heart conditions",
-    "logoUrl": "/logos/color.svg",
+    "logoUrl": "https://logo.clearbit.com/color.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -51,7 +51,7 @@
     "id": "7",
     "name": "Sempre Health",
     "description": "Dynamic prescription pricing platform that helps patients afford their medications",
-    "logoUrl": "/logos/sempre.svg",
+    "logoUrl": "https://logo.clearbit.com/semprehealth.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -59,7 +59,7 @@
     "id": "8",
     "name": "CareZone",
     "description": "Medication management app helping families organize and manage their health information",
-    "logoUrl": "/logos/carezone.svg",
+    "logoUrl": "https://logo.clearbit.com/carezone.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -67,7 +67,7 @@
     "id": "9",
     "name": "Mon Ami",
     "description": "Technology platform connecting older adults with trained companions for social engagement",
-    "logoUrl": "/logos/monami.svg",
+    "logoUrl": "https://logo.clearbit.com/monami.io",
     "category": "Digital Health",
     "featured": false
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "name": "VaxAtlas",
     "description": "Vaccine information management platform for tracking immunization records",
-    "logoUrl": "/logos/vaxatlas.svg",
+    "logoUrl": "",
     "category": "Digital Health",
     "featured": false
   },
@@ -83,7 +83,7 @@
     "id": "11",
     "name": "Mettle Health",
     "description": "Palliative care platform providing specialist support for patients with serious illness",
-    "logoUrl": "/logos/mettle.svg",
+    "logoUrl": "https://logo.clearbit.com/mettlehealth.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -91,7 +91,7 @@
     "id": "12",
     "name": "Bicycle Health",
     "description": "Telehealth platform for opioid addiction treatment combining medication and virtual care",
-    "logoUrl": "/logos/bicycle.svg",
+    "logoUrl": "https://logo.clearbit.com/bicyclehealth.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -99,7 +99,7 @@
     "id": "13",
     "name": "TimelyCare",
     "description": "Virtual health and well-being platform designed specifically for college students",
-    "logoUrl": "/logos/timelycare.svg",
+    "logoUrl": "https://logo.clearbit.com/timelycare.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -107,7 +107,7 @@
     "id": "14",
     "name": "Midi Health",
     "description": "Virtual care clinic specializing in menopause and midlife women's health",
-    "logoUrl": "/logos/midi.svg",
+    "logoUrl": "https://logo.clearbit.com/joinmidi.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -115,7 +115,7 @@
     "id": "15",
     "name": "Marley Medical",
     "description": "Telehealth platform providing accessible primary care and chronic disease management",
-    "logoUrl": "/logos/marley.svg",
+    "logoUrl": "https://logo.clearbit.com/marleymedical.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -123,7 +123,7 @@
     "id": "16",
     "name": "Wave Life",
     "description": "Digital health platform for chronic condition management and patient engagement",
-    "logoUrl": "/logos/wavelife.svg",
+    "logoUrl": "",
     "category": "Digital Health",
     "featured": false
   },
@@ -131,7 +131,7 @@
     "id": "17",
     "name": "BeMe Health",
     "description": "Teen mental health platform providing peer support and professional guidance",
-    "logoUrl": "/logos/beme.svg",
+    "logoUrl": "https://logo.clearbit.com/bemehealth.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -139,7 +139,7 @@
     "id": "18",
     "name": "Canopy",
     "description": "Healthcare staffing and credentialing platform for medical professionals",
-    "logoUrl": "/logos/canopy.svg",
+    "logoUrl": "",
     "category": "Digital Health",
     "featured": false
   },
@@ -147,7 +147,7 @@
     "id": "19",
     "name": "Podimetrics",
     "description": "Remote patient monitoring platform using smart mats to prevent diabetic foot ulcers",
-    "logoUrl": "/logos/podimetrics.svg",
+    "logoUrl": "https://logo.clearbit.com/podimetrics.com",
     "category": "Digital Health",
     "featured": false
   },
@@ -155,7 +155,7 @@
     "id": "20",
     "name": "Abridge",
     "description": "AI-powered medical conversation platform that summarizes doctor-patient dialogues",
-    "logoUrl": "/logos/abridge.svg",
+    "logoUrl": "https://logo.clearbit.com/abridge.com",
     "category": "Digital Health",
     "featured": true
   },
@@ -163,7 +163,7 @@
     "id": "21",
     "name": "Evernote",
     "description": "Note-taking and productivity app for capturing, organizing, and sharing information",
-    "logoUrl": "/logos/evernote.svg",
+    "logoUrl": "https://logo.clearbit.com/evernote.com",
     "category": "Consumer Tech",
     "featured": true
   },
@@ -171,7 +171,7 @@
     "id": "22",
     "name": "Eventbrite",
     "description": "Global event technology platform for discovering, creating, and promoting events",
-    "logoUrl": "/logos/eventbrite.svg",
+    "logoUrl": "https://logo.clearbit.com/eventbrite.com",
     "category": "Consumer Tech",
     "featured": true
   },
@@ -179,7 +179,7 @@
     "id": "23",
     "name": "StyleSeat",
     "description": "Beauty and wellness marketplace connecting consumers with beauty professionals",
-    "logoUrl": "/logos/styleseat.svg",
+    "logoUrl": "https://logo.clearbit.com/styleseat.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -187,7 +187,7 @@
     "id": "24",
     "name": "Trulia",
     "description": "Real estate website providing comprehensive home listings and neighborhood insights",
-    "logoUrl": "/logos/trulia.svg",
+    "logoUrl": "https://logo.clearbit.com/trulia.com",
     "category": "Consumer Tech",
     "featured": true
   },
@@ -195,7 +195,7 @@
     "id": "25",
     "name": "VUDU",
     "description": "Video-on-demand streaming service for movies and TV shows",
-    "logoUrl": "/logos/vudu.svg",
+    "logoUrl": "https://logo.clearbit.com/vudu.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -203,7 +203,7 @@
     "id": "26",
     "name": "Slide",
     "description": "Social application developer creating engaging social experiences",
-    "logoUrl": "/logos/slide.svg",
+    "logoUrl": "",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -211,7 +211,7 @@
     "id": "27",
     "name": "RealNetworks",
     "description": "Digital media delivery company pioneering internet streaming technology",
-    "logoUrl": "/logos/realnetworks.svg",
+    "logoUrl": "https://logo.clearbit.com/realnetworks.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -219,7 +219,7 @@
     "id": "28",
     "name": "Lala",
     "description": "Music streaming service and digital music marketplace",
-    "logoUrl": "/logos/lala.svg",
+    "logoUrl": "",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -227,7 +227,7 @@
     "id": "29",
     "name": "TrunkClub",
     "description": "Personalized styling service delivering curated clothing selections",
-    "logoUrl": "/logos/trunkclub.svg",
+    "logoUrl": "https://logo.clearbit.com/trunkclub.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -235,7 +235,7 @@
     "id": "30",
     "name": "AtomFilms",
     "description": "Online entertainment network showcasing short films and animations",
-    "logoUrl": "/logos/atomfilms.svg",
+    "logoUrl": "",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -243,7 +243,7 @@
     "id": "31",
     "name": "Shockwave",
     "description": "Online gaming and interactive entertainment platform",
-    "logoUrl": "/logos/shockwave.svg",
+    "logoUrl": "",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -251,7 +251,7 @@
     "id": "32",
     "name": "Babycenter",
     "description": "Pregnancy and parenting resource providing expert advice and community support",
-    "logoUrl": "/logos/babycenter.svg",
+    "logoUrl": "https://logo.clearbit.com/babycenter.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -259,7 +259,7 @@
     "id": "33",
     "name": "Speck Products",
     "description": "Designer of protective cases and accessories for mobile devices",
-    "logoUrl": "/logos/speck.svg",
+    "logoUrl": "https://logo.clearbit.com/speckproducts.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -267,7 +267,7 @@
     "id": "34",
     "name": "iBaby Labs",
     "description": "Smart baby monitoring devices connecting parents with their children",
-    "logoUrl": "/logos/ibaby.svg",
+    "logoUrl": "https://logo.clearbit.com/ibabylabs.com",
     "category": "Consumer Tech",
     "featured": false
   },
@@ -275,7 +275,7 @@
     "id": "35",
     "name": "Smule",
     "description": "Social music platform enabling collaborative singing and music creation",
-    "logoUrl": "/logos/smule.svg",
+    "logoUrl": "https://logo.clearbit.com/smule.com",
     "category": "Consumer Tech",
     "featured": false
   }
