@@ -4,7 +4,7 @@ const CLIENTS_KEY = 'tara_clients';
 const PRESS_KEY = 'tara_press';
 const SERVICES_KEY = 'tara_services';
 const DATA_VERSION_KEY = 'tara_data_version';
-const CURRENT_DATA_VERSION = '2'; // Increment when JSON data changes
+const CURRENT_DATA_VERSION = '3'; // Increment when JSON data changes
 
 // Helper to check if we're in browser
 const isBrowser = typeof window !== 'undefined';

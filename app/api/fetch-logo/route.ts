@@ -23,21 +23,12 @@ export async function POST(request: NextRequest) {
 
     // Use provided domain or guess from company name
     const targetDomain = domain || guessDomain(companyName);
-    const clearbitUrl = `https://logo.clearbit.com/${targetDomain}`;
 
-    // Check if the logo exists by making a HEAD request
-    const response = await fetch(clearbitUrl, { method: 'HEAD' });
+    // Use Google's favicon service (reliable and free)
+    const logoUrl = `https://www.google.com/s2/favicons?domain=${targetDomain}&sz=128`;
 
-    if (!response.ok) {
-      return NextResponse.json(
-        { error: 'Logo not found', domain: targetDomain },
-        { status: 404 }
-      );
-    }
-
-    // Return the Clearbit URL directly - can be used as-is
     return NextResponse.json({
-      logoUrl: clearbitUrl,
+      logoUrl,
       domain: targetDomain,
     });
 
