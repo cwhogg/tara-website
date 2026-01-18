@@ -22,3 +22,54 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Navigation */
+.nav {
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #666;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+/* Page content */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page p {
+  color: #666;
+  font-size: 1.125rem;
+}

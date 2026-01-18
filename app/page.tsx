@@ -1,7 +1,8 @@
 export default function Home() {
   return (
-    <main>
-      <h1>Welcome to Tara</h1>
+    <main className="page">
+      <h1>Home</h1>
+      <p>Welcome to Tara.</p>
     </main>
   )
 }
