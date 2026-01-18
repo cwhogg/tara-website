@@ -5,7 +5,6 @@ import { Client, PressItem } from '@/lib/types';
 import ClientForm from '@/components/admin/ClientForm';
 import PressForm from '@/components/admin/PressForm';
 import DataTable from '@/components/admin/DataTable';
-import BulkUpload from '@/components/admin/BulkUpload';
 
 const ADMIN_PASSWORD = 'tarawagner2024';
 const AUTH_KEY = 'tara_admin_auth';
@@ -135,26 +134,33 @@ export default function AdminPage() {
     localStorage.setItem('tara_press', JSON.stringify(newItems));
   };
 
-  // Bulk operations
-  const handleBulkUploadClients = (data: unknown[]) => {
-    const newClients = data as Client[];
-    setClients(newClients);
-    localStorage.setItem('tara_clients', JSON.stringify(newClients));
-  };
-
-  const handleBulkUploadPress = (data: unknown[]) => {
-    const newItems = data as PressItem[];
-    setPressItems(newItems);
-    localStorage.setItem('tara_press', JSON.stringify(newItems));
-  };
-
   const exportData = () => {
     const data = activeTab === 'clients' ? clients : pressItems;
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+
+    // Convert to CSV
+    if (data.length === 0) return;
+
+    const headers = Object.keys(data[0]);
+    const csvRows = [
+      headers.join(','),
+      ...data.map(row =>
+        headers.map(header => {
+          const value = (row as unknown as Record<string, unknown>)[header];
+          const stringValue = String(value ?? '');
+          // Escape quotes and wrap in quotes if contains comma, quote, or newline
+          if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+            return `"${stringValue.replace(/"/g, '""')}"`;
+          }
+          return stringValue;
+        }).join(',')
+      )
+    ];
+
+    const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${activeTab}.json`;
+    a.download = `${activeTab}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -265,17 +271,8 @@ export default function AdminPage() {
             onClick={exportData}
             className="btn-secondary text-sm py-2 px-4"
           >
-            Export JSON
+            Export CSV
           </button>
-        </div>
-
-        {/* Bulk Upload */}
-        <div className="mb-8">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">Bulk Upload</h3>
-          <BulkUpload
-            dataType={activeTab}
-            onUpload={activeTab === 'clients' ? handleBulkUploadClients : handleBulkUploadPress}
-          />
         </div>
 
         {/* Forms */}
