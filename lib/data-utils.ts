@@ -3,6 +3,8 @@ import { Client, PressItem, Service } from './types';
 const CLIENTS_KEY = 'tara_clients';
 const PRESS_KEY = 'tara_press';
 const SERVICES_KEY = 'tara_services';
+const DATA_VERSION_KEY = 'tara_data_version';
+const CURRENT_DATA_VERSION = '2'; // Increment when JSON data changes
 
 // Helper to check if we're in browser
 const isBrowser = typeof window !== 'undefined';
@@ -122,6 +124,15 @@ export function exportAllData(): { clients: Client[]; press: PressItem[]; servic
 // Initialize from JSON (call on app load)
 export async function initializeFromJson(): Promise<void> {
   if (!isBrowser) return;
+
+  // Check if data version changed - if so, clear old data to reload from JSON
+  const storedVersion = localStorage.getItem(DATA_VERSION_KEY);
+  if (storedVersion !== CURRENT_DATA_VERSION) {
+    localStorage.removeItem(CLIENTS_KEY);
+    localStorage.removeItem(PRESS_KEY);
+    localStorage.removeItem(SERVICES_KEY);
+    localStorage.setItem(DATA_VERSION_KEY, CURRENT_DATA_VERSION);
+  }
 
   // Only initialize if localStorage is empty
   if (!localStorage.getItem(CLIENTS_KEY)) {
