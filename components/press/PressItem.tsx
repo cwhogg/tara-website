@@ -5,12 +5,6 @@ interface PressItemProps {
 }
 
 export default function PressItem({ item }: PressItemProps) {
-  const formattedDate = new Date(item.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-
   const categoryColors = {
     Trade: 'bg-blue-100 text-blue-700',
     Business: 'bg-green-100 text-green-700',
@@ -29,11 +23,7 @@ export default function PressItem({ item }: PressItemProps) {
           <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors mb-2">
             {item.title}
           </h3>
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <span className="font-medium text-gray-700">{item.publication}</span>
-            <span className="text-gray-400">&bull;</span>
-            <span className="text-gray-500">{formattedDate}</span>
-          </div>
+          <p className="text-sm font-medium text-gray-700">{item.publication}</p>
         </div>
         <div className="flex items-center gap-3">
           <span className={`px-3 py-1 rounded-full text-xs font-medium ${categoryColors[item.category]}`}>
