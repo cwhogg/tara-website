@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Media Relations & Pitching",
+    "description": "Strategic media outreach that builds meaningful relationships with journalists and delivers impactful coverage. We translate complex healthcare and technology stories into compelling narratives that resonate with target audiences.",
+    "features": [
+      "Targeted journalist relationship building",
+      "Story development and angle creation",
+      "Press release writing and distribution",
+      "Interview preparation and media training",
+      "Proactive and reactive media outreach"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "PR Strategy",
+    "description": "Comprehensive communications planning that aligns with your business goals. We develop data-driven strategies that position your company as a thought leader in the healthcare and digital health space.",
+    "features": [
+      "Communications audits and competitive analysis",
+      "Strategic messaging framework development",
+      "Campaign planning and execution",
+      "Crisis communications preparedness",
+      "KPI development and measurement"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Press Materials & Messaging",
+    "description": "Compelling content that clearly communicates your value proposition. We craft messages that cut through the noise and connect with your key stakeholders.",
+    "features": [
+      "Key message development",
+      "Press kit creation",
+      "Executive bios and company boilerplates",
+      "FAQ documents and talking points",
+      "Website and marketing copy review"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "PR Agency Collaboration",
+    "description": "Expert guidance to enhance your existing PR efforts. Whether you need strategic oversight or hands-on support, we work seamlessly with your team or agency partners.",
+    "features": [
+      "Agency search and selection support",
+      "PR program oversight and optimization",
+      "Team training and mentorship",
+      "Campaign review and recommendations",
+      "Budget optimization strategies"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Thought Leadership",
+    "description": "Elevate your executives as industry voices. We develop and execute programs that showcase your expertise and build credibility with key audiences.",
+    "features": [
+      "Speaking opportunity identification",
+      "Conference and event strategy",
+      "Byline article development",
+      "Award submissions",
+      "Social media strategy for executives"
+    ]
+  }
+]
