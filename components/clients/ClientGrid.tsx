@@ -28,9 +28,10 @@ export default function ClientGrid() {
     loadClients();
   }, []);
 
-  const filteredClients = filter === 'All'
+  const filteredClients = (filter === 'All'
     ? clients
-    : clients.filter(c => c.category === filter);
+    : clients.filter(c => c.category === filter)
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
   if (loading) {
     return (
