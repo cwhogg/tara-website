@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Client, ClientCategory } from '@/lib/types';
 import { generateId } from '@/lib/data-utils';
+import ClientLogo from '@/components/ui/ClientLogo';
 
 interface ClientFormProps {
   client?: Client;
@@ -15,7 +16,9 @@ const categories: ClientCategory[] = ['Digital Health', 'Consumer Tech'];
 export default function ClientForm({ client, onSave, onCancel }: ClientFormProps) {
   const [autoFillInput, setAutoFillInput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isFetchingLogo, setIsFetchingLogo] = useState(false);
   const [error, setError] = useState('');
+  const [logoError, setLogoError] = useState('');
 
   const [formData, setFormData] = useState({
     name: client?.name || '',
@@ -55,6 +58,36 @@ export default function ClientForm({ client, onSave, onCancel }: ClientFormProps
       setError(e instanceof Error ? e.message : 'Failed to generate client info');
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const handleFetchLogo = async () => {
+    if (!formData.name.trim()) {
+      setLogoError('Enter a company name first');
+      return;
+    }
+
+    setIsFetchingLogo(true);
+    setLogoError('');
+
+    try {
+      const res = await fetch('/api/fetch-logo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companyName: formData.name }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Logo not found');
+      }
+
+      setFormData({ ...formData, logoUrl: data.logoUrl });
+    } catch (e) {
+      setLogoError(e instanceof Error ? e.message : 'Failed to fetch logo');
+    } finally {
+      setIsFetchingLogo(false);
     }
   };
 
@@ -137,14 +170,54 @@ export default function ClientForm({ client, onSave, onCancel }: ClientFormProps
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Logo URL</label>
-        <input
-          type="text"
-          value={formData.logoUrl}
-          onChange={(e) => setFormData({ ...formData, logoUrl: e.target.value })}
-          placeholder="/logos/company.svg"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
-        />
+        <label className="block text-sm font-medium text-gray-700 mb-1">Logo</label>
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0">
+            <ClientLogo name={formData.name || 'Company'} logoUrl={formData.logoUrl} size="lg" />
+          </div>
+          <div className="flex-1 space-y-2">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={formData.logoUrl}
+                onChange={(e) => setFormData({ ...formData, logoUrl: e.target.value })}
+                placeholder="https://logo.clearbit.com/example.com"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
+              />
+              {formData.logoUrl && (
+                <button
+                  type="button"
+                  onClick={() => setFormData({ ...formData, logoUrl: '' })}
+                  className="px-3 py-2 text-sm text-gray-600 hover:text-red-600"
+                  title="Clear logo"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={handleFetchLogo}
+              disabled={isFetchingLogo || !formData.name.trim()}
+              className="px-3 py-1.5 text-xs font-medium text-primary-700 bg-primary-50 rounded-md hover:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5"
+            >
+              {isFetchingLogo ? (
+                <>
+                  <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                  Fetching...
+                </>
+              ) : (
+                'Fetch from Clearbit'
+              )}
+            </button>
+            {logoError && <p className="text-red-600 text-xs">{logoError}</p>}
+          </div>
+        </div>
       </div>
 
       <div>

@@ -1,0 +1,51 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+function guessDomain(companyName: string): string {
+  // Remove common suffixes and clean up
+  const cleaned = companyName
+    .toLowerCase()
+    .replace(/\s+(inc|llc|ltd|corp|co|company|health|labs|medical)\.?$/i, '')
+    .replace(/[^a-z0-9]/g, '');
+
+  return `${cleaned}.com`;
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const { companyName, domain } = await request.json();
+
+    if (!companyName && !domain) {
+      return NextResponse.json(
+        { error: 'Company name or domain is required' },
+        { status: 400 }
+      );
+    }
+
+    // Use provided domain or guess from company name
+    const targetDomain = domain || guessDomain(companyName);
+    const clearbitUrl = `https://logo.clearbit.com/${targetDomain}`;
+
+    // Check if the logo exists by making a HEAD request
+    const response = await fetch(clearbitUrl, { method: 'HEAD' });
+
+    if (!response.ok) {
+      return NextResponse.json(
+        { error: 'Logo not found', domain: targetDomain },
+        { status: 404 }
+      );
+    }
+
+    // Return the Clearbit URL directly - can be used as-is
+    return NextResponse.json({
+      logoUrl: clearbitUrl,
+      domain: targetDomain,
+    });
+
+  } catch (error) {
+    console.error('Error fetching logo:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch logo' },
+      { status: 500 }
+    );
+  }
+}

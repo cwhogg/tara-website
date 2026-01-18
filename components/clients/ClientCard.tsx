@@ -1,4 +1,5 @@
 import { Client } from '@/lib/types';
+import ClientLogo from '@/components/ui/ClientLogo';
 
 interface ClientCardProps {
   client: Client;
@@ -7,8 +8,9 @@ interface ClientCardProps {
 export default function ClientCard({ client }: ClientCardProps) {
   return (
     <div className="bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg hover:border-primary-200 transition-all duration-300">
-      <div className="h-16 flex items-center justify-center mb-4">
-        <span className="text-lg font-semibold text-gray-800 text-center">{client.name}</span>
+      <div className="flex items-center gap-4 mb-4">
+        <ClientLogo name={client.name} logoUrl={client.logoUrl} size="lg" />
+        <span className="text-lg font-semibold text-gray-800">{client.name}</span>
       </div>
       <p className="text-gray-600 text-sm leading-relaxed">{client.description}</p>
       <div className="mt-4">

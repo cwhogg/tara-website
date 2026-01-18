@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Client } from '@/lib/types';
+import ClientLogo from '@/components/ui/ClientLogo';
 
 export default function FeaturedClients() {
   const [clients, setClients] = useState<Client[]>([]);
@@ -40,9 +41,10 @@ export default function FeaturedClients() {
           {clients.map((client) => (
             <div
               key={client.id}
-              className="bg-white rounded-lg p-6 flex items-center justify-center h-24 border border-gray-100 hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg p-6 flex flex-col items-center justify-center h-28 border border-gray-100 hover:shadow-md transition-shadow gap-2"
             >
-              <span className="text-gray-700 font-medium text-center">{client.name}</span>
+              <ClientLogo name={client.name} logoUrl={client.logoUrl} size="md" />
+              <span className="text-gray-700 font-medium text-center text-sm">{client.name}</span>
             </div>
           ))}
         </div>
