@@ -13,6 +13,10 @@ interface ClientFormProps {
 const categories: ClientCategory[] = ['Digital Health', 'Consumer Tech'];
 
 export default function ClientForm({ client, onSave, onCancel }: ClientFormProps) {
+  const [autoFillInput, setAutoFillInput] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [error, setError] = useState('');
+
   const [formData, setFormData] = useState({
     name: client?.name || '',
     description: client?.description || '',
@@ -20,6 +24,39 @@ export default function ClientForm({ client, onSave, onCancel }: ClientFormProps
     category: client?.category || 'Digital Health' as ClientCategory,
     featured: client?.featured || false,
   });
+
+  const handleAutoFill = async () => {
+    if (!autoFillInput.trim()) return;
+
+    setIsGenerating(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/generate-client', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ input: autoFillInput }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to generate');
+      }
+
+      const data = await res.json();
+      setFormData({
+        ...formData,
+        name: data.name || formData.name,
+        description: data.description || formData.description,
+        category: data.category || formData.category,
+      });
+      setAutoFillInput('');
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to generate client info');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,6 +68,52 @@ export default function ClientForm({ client, onSave, onCancel }: ClientFormProps
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Auto-fill section */}
+      {!client && (
+        <div className="bg-gray-50 rounded-lg p-4 mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Quick Add with AI
+          </label>
+          <p className="text-xs text-gray-500 mb-2">
+            Enter a company name or URL to auto-fill details
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={autoFillInput}
+              onChange={(e) => setAutoFillInput(e.target.value)}
+              placeholder="e.g., Stripe or https://stripe.com"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleAutoFill();
+                }
+              }}
+            />
+            <button
+              type="button"
+              onClick={handleAutoFill}
+              disabled={isGenerating || !autoFillInput.trim()}
+              className="px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-md hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            >
+              {isGenerating ? (
+                <>
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                  Generating...
+                </>
+              ) : (
+                'Generate'
+              )}
+            </button>
+          </div>
+          {error && <p className="text-red-600 text-xs mt-2">{error}</p>}
+        </div>
+      )}
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
         <input
