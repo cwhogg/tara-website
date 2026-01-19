@@ -24,13 +24,14 @@ function getInitials(name: string): string {
 }
 
 function getColorFromName(name: string): string {
-  // Berry wine inspired color variations
+  // Multi-color palette using primary and secondary colors
   const colors = [
     'bg-primary-500',
+    'bg-sage-500',
+    'bg-plum-500',
+    'bg-taupe-500',
     'bg-primary-400',
-    'bg-primary-600',
-    'bg-primary-300',
-    'bg-primary-700',
+    'bg-sage-600',
   ];
   const index = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return colors[index % colors.length];

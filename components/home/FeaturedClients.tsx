@@ -26,10 +26,17 @@ export default function FeaturedClients() {
   if (clients.length === 0) return null;
 
   return (
-    <section className="py-20 lg:py-28 bg-cream-200">
-      <div className="container-custom">
+    <section className="py-24 lg:py-32 bg-cream-200 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-1/4 w-64 h-64 bg-taupe-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-sage-100 rounded-full blur-3xl opacity-30" />
+
+      <div className="container-custom relative">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-text-primary mb-6">
+          <p className="text-taupe-500 font-medium tracking-[0.15em] uppercase text-sm mb-4">
+            Portfolio
+          </p>
+          <h2 className="text-4xl md:text-5xl font-serif text-text-primary mb-6">
             Companies I&apos;ve Worked With
           </h2>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -39,17 +46,23 @@ export default function FeaturedClients() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
-          {clients.map((client) => (
-            <div
-              key={client.id}
-              className="bg-cream-50 rounded-xl p-6 flex flex-col items-center justify-center h-32 border border-cream-300 hover:border-primary-200 hover:shadow-lg transition-all duration-300 group"
-            >
-              <ClientLogo name={client.name} logoUrl={client.logoUrl} size="md" />
-              <span className="text-text-secondary font-medium text-center text-sm mt-3 group-hover:text-primary-500 transition-colors">
-                {client.name}
-              </span>
-            </div>
-          ))}
+          {clients.map((client, index) => {
+            // Alternate subtle background colors
+            const bgColors = ['bg-cream-50', 'bg-white'];
+            const bgColor = bgColors[index % 2];
+
+            return (
+              <div
+                key={client.id}
+                className={`${bgColor} rounded-xl p-6 flex flex-col items-center justify-center h-32 border border-cream-300 hover:border-primary-200 hover:shadow-lg transition-all duration-300 group`}
+              >
+                <ClientLogo name={client.name} logoUrl={client.logoUrl} size="md" />
+                <span className="text-text-secondary font-medium text-center text-sm mt-3 group-hover:text-primary-500 transition-colors">
+                  {client.name}
+                </span>
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-center">

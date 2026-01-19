@@ -2,8 +2,11 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 text-white">
-      <div className="container-custom py-16">
+    <footer className="bg-primary-900 text-white relative overflow-hidden">
+      {/* Subtle decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-900 to-plum-700 opacity-50" />
+
+      <div className="container-custom py-16 relative">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Personal section */}
           <div className="md:col-span-5">
@@ -14,7 +17,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:tara@tarawagnerpr.com"
-              className="inline-flex items-center gap-2 text-primary-100 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sage-300 hover:text-white transition-colors"
             >
               tara@tarawagnerpr.com
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -28,7 +31,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-300 mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-taupe-400 mb-4">
               Explore
             </h4>
             <ul className="space-y-3">
@@ -57,7 +60,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="md:col-span-2">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-300 mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-taupe-400 mb-4">
               Connect
             </h4>
             <ul className="space-y-3">

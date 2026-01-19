@@ -4,13 +4,13 @@ interface PressItemProps {
   item: PressItemType;
 }
 
-export default function PressItem({ item }: PressItemProps) {
-  const categoryColors = {
-    Trade: 'bg-primary-50 text-primary-600',
-    Business: 'bg-success-light text-success',
-    Consumer: 'bg-primary-100 text-primary-700',
-  };
+const categoryColors = {
+  Trade: 'bg-sage-50 text-sage-600',
+  Business: 'bg-taupe-50 text-taupe-600',
+  Consumer: 'bg-plum-50 text-plum-600',
+};
 
+export default function PressItem({ item }: PressItemProps) {
   return (
     <a
       href={item.url}
@@ -26,7 +26,7 @@ export default function PressItem({ item }: PressItemProps) {
           <p className="text-sm font-medium text-text-secondary">{item.publication}</p>
         </div>
         <div className="flex items-center gap-3">
-          <span className={`px-3 py-1 rounded-full text-xs font-medium ${categoryColors[item.category]}`}>
+          <span className={`px-3 py-1 rounded-md text-xs font-medium ${categoryColors[item.category]}`}>
             {item.category}
           </span>
           <svg

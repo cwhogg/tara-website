@@ -3,8 +3,10 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream-100 min-h-[90vh] flex items-center">
-      {/* Decorative circle */}
+      {/* Decorative elements using secondary palette */}
       <div className="absolute top-20 right-32 w-24 h-24 bg-primary-100 rounded-full opacity-60" />
+      <div className="absolute bottom-32 left-20 w-16 h-16 bg-sage-100 rounded-full opacity-50" />
+      <div className="absolute top-1/3 left-10 w-8 h-8 bg-plum-100 rounded-full opacity-40" />
 
       <div className="container-custom py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

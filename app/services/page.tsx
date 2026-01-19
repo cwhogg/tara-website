@@ -23,7 +23,7 @@ export default function ServicesPage() {
         <ServicesList />
 
         {/* CTA Section */}
-        <div className="mt-16 bg-primary-50 rounded-xl p-8 md:p-12 text-center border border-primary-100">
+        <div className="mt-16 bg-gradient-to-br from-sage-50 to-plum-50 rounded-xl p-8 md:p-12 text-center border border-cream-200">
           <h2 className="text-2xl md:text-3xl font-serif text-text-primary mb-4">
             Ready to Get Started?
           </h2>
