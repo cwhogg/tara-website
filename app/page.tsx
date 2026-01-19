@@ -10,22 +10,31 @@ export default function Home() {
       <ExpertiseSection />
       <FeaturedClients />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-600">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Tell Your Story?
-          </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Let&apos;s discuss how strategic PR can help your healthcare or digital health
-            company reach the audiences that matter most.
-          </p>
-          <Link
-            href="mailto:tara@tarawagnerpr.com"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-primary-600 bg-white hover:bg-gray-100 transition-colors duration-200"
-          >
-            Get in Touch
-          </Link>
+      {/* Personal CTA Section */}
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-600 to-primary-700 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-800 rounded-full blur-3xl opacity-40" />
+
+        <div className="container-custom relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
+              Let&apos;s tell your story together.
+            </h2>
+            <p className="text-xl text-primary-100 mb-8 leading-relaxed">
+              Whether you&apos;re launching a new product, raising a round, or ready
+              to build your brand&apos;s voice, I&apos;d love to hear what you&apos;re working on.
+            </p>
+            <Link
+              href="mailto:tara@tarawagnerpr.com"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full text-primary-700 bg-white hover:bg-cream-100 transition-all duration-300 hover:shadow-xl"
+            >
+              Get in Touch
+            </Link>
+            <p className="mt-6 text-primary-200 text-sm">
+              tara@tarawagnerpr.com
+            </p>
+          </div>
         </div>
       </section>
     </main>

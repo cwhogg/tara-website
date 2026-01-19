@@ -8,18 +8,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Warm, personal palette
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#fdf8f6',
+          100: '#f9ede8',
+          200: '#f3ddd3',
+          300: '#e9c4b4',
+          400: '#dba18a',
+          500: '#c9785c',
+          600: '#b85d42',
+          700: '#9a4a35',
+          800: '#7f3f30',
+          900: '#6a372c',
         },
+        cream: {
+          50: '#fefdfb',
+          100: '#fdfaf5',
+          200: '#faf5ec',
+          300: '#f5ece0',
+          400: '#ebe0d0',
+        },
+        sage: {
+          500: '#7c9082',
+          600: '#668572',
+          700: '#526b5c',
+        },
+      },
+      fontFamily: {
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -26,32 +26,46 @@ export default function FeaturedClients() {
   if (clients.length === 0) return null;
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 lg:py-28 bg-cream-100">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Trusted by Industry Leaders
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-gray-900 mb-6">
+            Companies I&apos;ve Worked With
           </h2>
-          <p className="text-lg text-gray-600">
-            Proud to have partnered with innovative companies transforming healthcare
+          <p className="text-xl text-gray-600 leading-relaxed">
+            From early-stage startups to public companies, I&apos;ve had the privilege
+            of partnering with teams who are reimagining healthcare.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
           {clients.map((client) => (
             <div
               key={client.id}
-              className="bg-white rounded-lg p-6 flex flex-col items-center justify-center h-28 border border-gray-100 hover:shadow-md transition-shadow gap-2"
+              className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center h-32 border border-cream-300 hover:border-primary-300 hover:shadow-lg transition-all duration-300 group"
             >
               <ClientLogo name={client.name} logoUrl={client.logoUrl} size="md" />
-              <span className="text-gray-700 font-medium text-center text-sm">{client.name}</span>
+              <span className="text-gray-700 font-medium text-center text-sm mt-3 group-hover:text-primary-700 transition-colors">
+                {client.name}
+              </span>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Link href="/clients" className="btn-secondary">
-            View All Clients
+          <Link
+            href="/clients"
+            className="inline-flex items-center gap-2 text-primary-700 font-medium hover:text-primary-800 transition-colors group"
+          >
+            View all clients
+            <svg
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
       </div>
