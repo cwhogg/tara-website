@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tara Wagner - Direction 1 Color Variations</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    .direction-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .direction-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      padding: 0.625rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .direction-nav a:hover {
+      color: white;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .direction-nav a.active {
+      background: white;
+      color: black;
+    }
+
+    /* Section intros */
+    .direction-intro {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+      background: #111;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .direction-intro .label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.75rem;
+    }
+
+    .direction-intro h1 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .direction-intro .desc {
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .design-specs {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .design-specs span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* ==========================================
+       VARIATION A: Berry Wine
+       ========================================== */
+    .variation-a {
+      --bg: #FAF8F6;
+      --bg-alt: #F3EFEB;
+      --text: #2D2A26;
+      --text-muted: #6B6660;
+      --accent: #7B2D52;
+      --accent-light: #F5E8ED;
+      --accent-hover: #5E2240;
+      --warm: #D4B8C4;
+      --warm-dark: #8B6B7A;
+    }
+
+    .variation-a .hero {
+      background: var(--bg);
+      min-height: 100vh;
+      font-family: 'Libre Franklin', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .variation-a .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .variation-a .hero-content {
+      padding: 8rem 4rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .variation-a .hero-eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .variation-a .hero-title {
+      font-family: 'Lora', serif;
+      font-size: 3.75rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .variation-a .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .variation-a .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+
+    .variation-a .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .variation-a .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    .variation-a .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(123, 45, 82, 0.25);
+    }
+
+    .variation-a .btn-secondary {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .variation-a .btn-secondary:hover {
+      color: var(--accent);
+      gap: 0.75rem;
+    }
+
+    .variation-a .hero-image-area {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .variation-a .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+    }
+
+    .variation-a .image-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--warm);
+      border-radius: 200px 200px 16px 16px;
+      transform: rotate(3deg);
+      opacity: 0.5;
+    }
+
+    .variation-a .image-main {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, var(--warm) 0%, var(--warm-dark) 100%);
+      border-radius: 200px 200px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .variation-a .image-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8125rem;
+    }
+
+    .variation-a .floating-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--bg);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      border: 1px solid var(--bg-alt);
+    }
+
+    .variation-a .floating-badge .number {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .variation-a .floating-badge .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .variation-a .organic-accent {
+      position: absolute;
+      top: 8rem;
+      right: 2rem;
+      width: 80px;
+      height: 80px;
+      background: var(--accent-light);
+      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+      opacity: 0.8;
+    }
+
+    .variation-a .clients-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-alt);
+      padding: 1.5rem 6rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .variation-a .clients-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .variation-a .clients-list {
+      display: flex;
+      gap: 2.5rem;
+      color: var(--warm-dark);
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+
+    /* ==========================================
+       VARIATION B: Forest Green
+       ========================================== */
+    .variation-b {
+      --bg: #F8F9F7;
+      --bg-alt: #EEF1EC;
+      --text: #1F2420;
+      --text-muted: #5A6359;
+      --accent: #2D4A3E;
+      --accent-light: #E4EBE7;
+      --accent-hover: #1E332B;
+      --warm: #A8B5A0;
+      --warm-dark: #6B7A64;
+    }
+
+    .variation-b .hero {
+      background: var(--bg);
+      min-height: 100vh;
+      font-family: 'Libre Franklin', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .variation-b .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .variation-b .hero-content {
+      padding: 8rem 4rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .variation-b .hero-eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .variation-b .hero-title {
+      font-family: 'Lora', serif;
+      font-size: 3.75rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .variation-b .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .variation-b .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+
+    .variation-b .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .variation-b .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    .variation-b .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45, 74, 62, 0.25);
+    }
+
+    .variation-b .btn-secondary {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .variation-b .btn-secondary:hover {
+      color: var(--accent);
+      gap: 0.75rem;
+    }
+
+    .variation-b .hero-image-area {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .variation-b .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+    }
+
+    .variation-b .image-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--warm);
+      border-radius: 200px 200px 16px 16px;
+      transform: rotate(3deg);
+      opacity: 0.5;
+    }
+
+    .variation-b .image-main {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, var(--warm) 0%, var(--warm-dark) 100%);
+      border-radius: 200px 200px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .variation-b .image-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8125rem;
+    }
+
+    .variation-b .floating-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--bg);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      border: 1px solid var(--bg-alt);
+    }
+
+    .variation-b .floating-badge .number {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .variation-b .floating-badge .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .variation-b .organic-accent {
+      position: absolute;
+      top: 8rem;
+      right: 2rem;
+      width: 80px;
+      height: 80px;
+      background: var(--accent-light);
+      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+      opacity: 0.8;
+    }
+
+    .variation-b .clients-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-alt);
+      padding: 1.5rem 6rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .variation-b .clients-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .variation-b .clients-list {
+      display: flex;
+      gap: 2.5rem;
+      color: var(--warm-dark);
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+
+    /* ==========================================
+       VARIATION C: Dusty Blue & Taupe
+       ========================================== */
+    .variation-c {
+      --bg: #FAFAF8;
+      --bg-alt: #F0EFEB;
+      --text: #2A2926;
+      --text-muted: #6B6862;
+      --accent: #4A6B7C;
+      --accent-light: #E5EDEF;
+      --accent-hover: #3A5563;
+      --warm: #C4BAA8;
+      --warm-dark: #8A8070;
+    }
+
+    .variation-c .hero {
+      background: var(--bg);
+      min-height: 100vh;
+      font-family: 'Libre Franklin', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .variation-c .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .variation-c .hero-content {
+      padding: 8rem 4rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .variation-c .hero-eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .variation-c .hero-title {
+      font-family: 'Lora', serif;
+      font-size: 3.75rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .variation-c .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .variation-c .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+    }
+
+    .variation-c .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .variation-c .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.25rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    .variation-c .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(74, 107, 124, 0.25);
+    }
+
+    .variation-c .btn-secondary {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .variation-c .btn-secondary:hover {
+      color: var(--accent);
+      gap: 0.75rem;
+    }
+
+    .variation-c .hero-image-area {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .variation-c .image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+    }
+
+    .variation-c .image-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--warm);
+      border-radius: 200px 200px 16px 16px;
+      transform: rotate(3deg);
+      opacity: 0.5;
+    }
+
+    .variation-c .image-main {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, var(--warm) 0%, var(--warm-dark) 100%);
+      border-radius: 200px 200px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .variation-c .image-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8125rem;
+    }
+
+    .variation-c .floating-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--bg);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      border: 1px solid var(--bg-alt);
+    }
+
+    .variation-c .floating-badge .number {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .variation-c .floating-badge .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .variation-c .organic-accent {
+      position: absolute;
+      top: 8rem;
+      right: 2rem;
+      width: 80px;
+      height: 80px;
+      background: var(--accent-light);
+      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+      opacity: 0.8;
+    }
+
+    .variation-c .clients-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-alt);
+      padding: 1.5rem 6rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .variation-c .clients-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .variation-c .clients-list {
+      display: flex;
+      gap: 2.5rem;
+      color: var(--warm-dark);
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .variation-a .hero-container,
+      .variation-b .hero-container,
+      .variation-c .hero-container {
+        grid-template-columns: 1fr;
+      }
+
+      .variation-a .hero-image-area,
+      .variation-b .hero-image-area,
+      .variation-c .hero-image-area {
+        display: none;
+      }
+
+      .variation-a .hero-content,
+      .variation-b .hero-content,
+      .variation-c .hero-content {
+        padding: 8rem 2rem 6rem;
+      }
+
+      .variation-a .hero-title,
+      .variation-b .hero-title,
+      .variation-c .hero-title {
+        font-size: 2.75rem;
+      }
+
+      .variation-a .clients-bar,
+      .variation-b .clients-bar,
+      .variation-c .clients-bar {
+        padding: 1.5rem 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .variation-a .clients-list,
+      .variation-b .clients-list,
+      .variation-c .clients-list {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="direction-nav">
+    <a href="#variation-a" class="active">A: Berry Wine</a>
+    <a href="#variation-b">B: Forest Green</a>
+    <a href="#variation-c">C: Dusty Blue</a>
+  </nav>
+
+  <!-- ==========================================
+       VARIATION A: Berry Wine
+       ========================================== -->
+  <section id="variation-a">
+    <div class="direction-intro">
+      <div class="label">Variation A</div>
+      <h1>Berry Wine</h1>
+      <p class="desc">
+        Rich and sophisticated. The deep berry/burgundy accent adds warmth and elegance
+        while feeling modern and confident. Feminine without being girly.
+      </p>
+      <div class="design-specs">
+        <span><span class="color-swatch" style="background: #FAF8F6; border-color: #ddd;"></span> Warm Cream</span>
+        <span><span class="color-swatch" style="background: #7B2D52;"></span> Berry Wine</span>
+        <span><span class="color-swatch" style="background: #D4B8C4;"></span> Dusty Rose</span>
+        <span>Lora + Libre Franklin</span>
+      </div>
+    </div>
+
+    <div class="variation-a">
+      <div class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Healthcare Communications</div>
+            <h1 class="hero-title">
+              Hi, I'm Tara.<br>
+              I tell stories<br>
+              <em>that matter.</em>
+            </h1>
+            <p class="hero-subtitle">
+              For two decades, I've helped healthcare innovators share their vision with the world—translating complex ideas into narratives that resonate and inspire.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn-primary">Let's Connect</a>
+              <a href="#" class="btn-secondary">View My Work →</a>
+            </div>
+          </div>
+
+          <div class="hero-image-area">
+            <div class="organic-accent"></div>
+            <div class="image-frame">
+              <div class="image-bg"></div>
+              <div class="image-main">
+                <div class="image-placeholder">
+                  Photo of Tara<br>
+                  <small style="opacity: 0.7;">/public/tara.jpg</small>
+                </div>
+              </div>
+            </div>
+            <div class="floating-badge">
+              <div class="number">20+</div>
+              <div class="label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clients-bar">
+          <div class="clients-label">Trusted by</div>
+          <div class="clients-list">
+            <span>ZocDoc</span>
+            <span>Evernote</span>
+            <span>Eventbrite</span>
+            <span>Color Health</span>
+            <span>Trulia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VARIATION B: Forest Green
+       ========================================== -->
+  <section id="variation-b">
+    <div class="direction-intro">
+      <div class="label">Variation B</div>
+      <h1>Forest Green</h1>
+      <p class="desc">
+        Deep and grounded. A richer, darker green than the original sage—feels established,
+        trustworthy, and connected to healthcare/wellness without being clinical.
+      </p>
+      <div class="design-specs">
+        <span><span class="color-swatch" style="background: #F8F9F7; border-color: #ddd;"></span> Soft White</span>
+        <span><span class="color-swatch" style="background: #2D4A3E;"></span> Forest Green</span>
+        <span><span class="color-swatch" style="background: #A8B5A0;"></span> Sage Mist</span>
+        <span>Lora + Libre Franklin</span>
+      </div>
+    </div>
+
+    <div class="variation-b">
+      <div class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Healthcare Communications</div>
+            <h1 class="hero-title">
+              Hi, I'm Tara.<br>
+              I tell stories<br>
+              <em>that matter.</em>
+            </h1>
+            <p class="hero-subtitle">
+              For two decades, I've helped healthcare innovators share their vision with the world—translating complex ideas into narratives that resonate and inspire.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn-primary">Let's Connect</a>
+              <a href="#" class="btn-secondary">View My Work →</a>
+            </div>
+          </div>
+
+          <div class="hero-image-area">
+            <div class="organic-accent"></div>
+            <div class="image-frame">
+              <div class="image-bg"></div>
+              <div class="image-main">
+                <div class="image-placeholder">
+                  Photo of Tara<br>
+                  <small style="opacity: 0.7;">/public/tara.jpg</small>
+                </div>
+              </div>
+            </div>
+            <div class="floating-badge">
+              <div class="number">20+</div>
+              <div class="label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clients-bar">
+          <div class="clients-label">Trusted by</div>
+          <div class="clients-list">
+            <span>ZocDoc</span>
+            <span>Evernote</span>
+            <span>Eventbrite</span>
+            <span>Color Health</span>
+            <span>Trulia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VARIATION C: Dusty Blue & Taupe
+       ========================================== -->
+  <section id="variation-c">
+    <div class="direction-intro">
+      <div class="label">Variation C</div>
+      <h1>Dusty Blue & Taupe</h1>
+      <p class="desc">
+        Calm and premium. A sophisticated slate blue paired with warm taupe tones—
+        feels trustworthy and approachable, perfect for healthcare. Timeless without being cold.
+      </p>
+      <div class="design-specs">
+        <span><span class="color-swatch" style="background: #FAFAF8; border-color: #ddd;"></span> Warm White</span>
+        <span><span class="color-swatch" style="background: #4A6B7C;"></span> Dusty Blue</span>
+        <span><span class="color-swatch" style="background: #C4BAA8;"></span> Warm Taupe</span>
+        <span>Lora + Libre Franklin</span>
+      </div>
+    </div>
+
+    <div class="variation-c">
+      <div class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Healthcare Communications</div>
+            <h1 class="hero-title">
+              Hi, I'm Tara.<br>
+              I tell stories<br>
+              <em>that matter.</em>
+            </h1>
+            <p class="hero-subtitle">
+              For two decades, I've helped healthcare innovators share their vision with the world—translating complex ideas into narratives that resonate and inspire.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn-primary">Let's Connect</a>
+              <a href="#" class="btn-secondary">View My Work →</a>
+            </div>
+          </div>
+
+          <div class="hero-image-area">
+            <div class="organic-accent"></div>
+            <div class="image-frame">
+              <div class="image-bg"></div>
+              <div class="image-main">
+                <div class="image-placeholder">
+                  Photo of Tara<br>
+                  <small style="opacity: 0.7;">/public/tara.jpg</small>
+                </div>
+              </div>
+            </div>
+            <div class="floating-badge">
+              <div class="number">20+</div>
+              <div class="label">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clients-bar">
+          <div class="clients-label">Trusted by</div>
+          <div class="clients-list">
+            <span>ZocDoc</span>
+            <span>Evernote</span>
+            <span>Eventbrite</span>
+            <span>Color Health</span>
+            <span>Trulia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.direction-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        document.querySelectorAll('.direction-nav a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.direction-nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

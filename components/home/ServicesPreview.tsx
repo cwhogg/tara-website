@@ -41,13 +41,13 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-cream-100">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-text-primary mb-6">
             How I Can Help
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl text-text-secondary leading-relaxed">
             From early-stage messaging to full PR campaigns, I offer flexible
             support tailored to where you are in your journey.
           </p>
@@ -57,17 +57,17 @@ export default function ServicesPreview() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group p-8 rounded-2xl border border-cream-300 bg-cream-50/50 hover:bg-white hover:border-primary-200 hover:shadow-lg transition-all duration-300"
+              className="group p-8 rounded-xl border border-cream-300 bg-cream-50 hover:bg-white hover:border-primary-200 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-50 text-primary-500 flex items-center justify-center group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
                   {service.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-serif text-gray-900 mb-2">
+                  <h3 className="text-xl font-serif text-text-primary mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-text-muted leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function ServicesPreview() {
         <div className="text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-primary-700 font-medium hover:text-primary-800 transition-colors group"
+            className="inline-flex items-center gap-2 text-primary-500 font-medium hover:text-primary-600 transition-colors group"
           >
             View all services
             <svg

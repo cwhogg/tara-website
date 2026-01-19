@@ -16,10 +16,10 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-cream-50/80 backdrop-blur-md border-b border-cream-200 sticky top-0 z-50">
+    <nav className="bg-cream-50/90 backdrop-blur-md border-b border-cream-300 sticky top-0 z-50">
       <div className="container-custom">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-serif text-gray-900 tracking-tight">
+          <Link href="/" className="text-xl font-serif text-text-primary tracking-tight">
             Tara Wagner
           </Link>
 
@@ -31,8 +31,8 @@ export default function Navigation() {
                   href={link.href}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     pathname === link.href
-                      ? 'text-primary-700'
-                      : 'text-gray-600 hover:text-primary-600'
+                      ? 'text-primary-500'
+                      : 'text-text-secondary hover:text-primary-500'
                   }`}
                 >
                   {link.label}
@@ -52,7 +52,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-full text-gray-600 hover:text-primary-600 hover:bg-cream-200 transition-colors"
+            className="md:hidden p-2 rounded-md text-text-secondary hover:text-primary-500 hover:bg-cream-200 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
@@ -71,16 +71,16 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-cream-200">
+          <div className="md:hidden py-4 border-t border-cream-300">
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block px-4 py-2 rounded-xl text-base font-medium transition-colors duration-200 ${
+                    className={`block px-4 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                       pathname === link.href
-                        ? 'text-primary-700 bg-primary-50'
-                        : 'text-gray-600 hover:text-primary-600 hover:bg-cream-100'
+                        ? 'text-primary-500 bg-primary-50'
+                        : 'text-text-secondary hover:text-primary-500 hover:bg-cream-200'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

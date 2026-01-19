@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berry Wine - Full Color Palette</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Libre Franklin', sans-serif;
+      background: #FAF8F6;
+      color: #2D2A26;
+      line-height: 1.6;
+      padding: 3rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #7B2D52;
+    }
+
+    .subtitle {
+      color: #6B6660;
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #2D2A26;
+    }
+
+    .section-desc {
+      color: #6B6660;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .color-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .color-card {
+      width: 140px;
+    }
+
+    .color-swatch {
+      height: 80px;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .color-swatch.large {
+      height: 120px;
+      width: 180px;
+    }
+
+    .color-card.large {
+      width: 180px;
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      margin-bottom: 0.125rem;
+    }
+
+    .color-hex {
+      font-size: 0.75rem;
+      color: #6B6660;
+      font-family: monospace;
+    }
+
+    .color-usage {
+      font-size: 0.6875rem;
+      color: #9B9590;
+      margin-top: 0.25rem;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #E8E4E0;
+      margin: 3rem 0;
+    }
+
+    /* Example components */
+    .examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .example-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #E8E4E0;
+    }
+
+    .example-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9B9590;
+      margin-bottom: 1rem;
+    }
+
+    /* Button examples */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #7B2D52;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5E2240;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #7B2D52;
+      border: 2px solid #7B2D52;
+    }
+
+    .btn-secondary:hover {
+      background: #F5E8ED;
+    }
+
+    .btn-subtle {
+      background: #F5E8ED;
+      color: #7B2D52;
+    }
+
+    /* Text examples */
+    .text-heading {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      color: #2D2A26;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-body {
+      color: #4A4744;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-muted {
+      color: #6B6660;
+      font-size: 0.875rem;
+    }
+
+    .text-accent {
+      color: #7B2D52;
+      font-weight: 500;
+    }
+
+    /* Card example */
+    .card-demo {
+      background: #FFFFFF;
+      border: 1px solid #E8E4E0;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .card-demo:hover {
+      border-color: #D4B8C4;
+      box-shadow: 0 4px 12px rgba(123, 45, 82, 0.08);
+    }
+
+    /* Link examples */
+    .link {
+      color: #7B2D52;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .link:hover {
+      border-bottom-color: #7B2D52;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .badge-primary {
+      background: #F5E8ED;
+      color: #7B2D52;
+    }
+
+    .badge-success {
+      background: #E8EDE5;
+      color: #4A6B4A;
+    }
+
+    /* Tailwind config preview */
+    .code-block {
+      background: #2D2A26;
+      color: #E8E4E0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.8125rem;
+      line-height: 1.8;
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+
+    .code-comment {
+      color: #6B6660;
+    }
+
+    .code-key {
+      color: #D4B8C4;
+    }
+
+    .code-value {
+      color: #A8D4A8;
+    }
+
+    .code-string {
+      color: #E8B87C;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Berry Wine Palette</h1>
+    <p class="subtitle">A complete color system for Tara Wagner's website</p>
+
+    <!-- Primary Colors -->
+    <div class="section">
+      <h2 class="section-title">Primary — Berry Wine</h2>
+      <p class="section-desc">The main accent color. Use for CTAs, links, highlights, and key interactive elements.</p>
+      <div class="color-row">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #F5E8ED;"></div>
+          <div class="color-name">Berry 50</div>
+          <div class="color-hex">#F5E8ED</div>
+          <div class="color-usage">Hover states, light bg</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #E8CDD8;"></div>
+          <div class="color-name">Berry 100</div>
+          <div class="color-hex">#E8CDD8</div>
+          <div class="color-usage">Borders, dividers</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #D4B8C4;"></div>
+          <div class="color-name">Berry 200</div>
+          <div class="color-hex">#D4B8C4</div>
+          <div class="color-usage">Secondary elements</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #B07A94;"></div>
+          <div class="color-name">Berry 300</div>
+          <div class="color-hex">#B07A94</div>
+          <div class="color-usage">Muted accent</div>
+        </div>
+        <div class="color-card large">
+          <div class="color-swatch large" style="background: #7B2D52;"></div>
+          <div class="color-name">Berry 500 (Primary)</div>
+          <div class="color-hex">#7B2D52</div>
+          <div class="color-usage">Main accent, CTAs, links</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #5E2240;"></div>
+          <div class="color-name">Berry 600</div>
+          <div class="color-hex">#5E2240</div>
+          <div class="color-usage">Hover states</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #471832;"></div>
+          <div class="color-name">Berry 700</div>
+          <div class="color-hex">#471832</div>
+          <div class="color-usage">Active states</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Background Colors -->
+    <div class="section">
+      <h2 class="section-title">Backgrounds — Warm Neutrals</h2>
+      <p class="section-desc">Warm, creamy backgrounds that feel inviting. Never pure white—always with warmth.</p>
+      <div class="color-row">
+        <div class="color-card large">
+          <div class="color-swatch large" style="background: #FFFDFB;"></div>
+          <div class="color-name">Cream 50</div>
+          <div class="color-hex">#FFFDFB</div>
+          <div class="color-usage">Cards, modals</div>
+        </div>
+        <div class="color-card large">
+          <div class="color-swatch large" style="background: #FAF8F6;"></div>
+          <div class="color-name">Cream 100 (Main BG)</div>
+          <div class="color-hex">#FAF8F6</div>
+          <div class="color-usage">Page background</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #F3EFEB;"></div>
+          <div class="color-name">Cream 200</div>
+          <div class="color-hex">#F3EFEB</div>
+          <div class="color-usage">Alt sections</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #E8E4E0;"></div>
+          <div class="color-name">Cream 300</div>
+          <div class="color-hex">#E8E4E0</div>
+          <div class="color-usage">Borders, dividers</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #D9D4CE;"></div>
+          <div class="color-name">Cream 400</div>
+          <div class="color-hex">#D9D4CE</div>
+          <div class="color-usage">Disabled states</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Text Colors -->
+    <div class="section">
+      <h2 class="section-title">Text — Warm Grays</h2>
+      <p class="section-desc">Text colors with warm undertones to complement the palette. Never pure black.</p>
+      <div class="color-row">
+        <div class="color-card large">
+          <div class="color-swatch large" style="background: #2D2A26;"></div>
+          <div class="color-name">Text Primary</div>
+          <div class="color-hex">#2D2A26</div>
+          <div class="color-usage">Headlines, body text</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #4A4744;"></div>
+          <div class="color-name">Text Secondary</div>
+          <div class="color-hex">#4A4744</div>
+          <div class="color-usage">Body text alt</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #6B6660;"></div>
+          <div class="color-name">Text Muted</div>
+          <div class="color-hex">#6B6660</div>
+          <div class="color-usage">Captions, meta</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #9B9590;"></div>
+          <div class="color-name">Text Subtle</div>
+          <div class="color-hex">#9B9590</div>
+          <div class="color-usage">Placeholders</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFFDFB; border: 1px solid #E8E4E0;"></div>
+          <div class="color-name">Text Inverse</div>
+          <div class="color-hex">#FFFDFB</div>
+          <div class="color-usage">On dark backgrounds</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Supporting Colors -->
+    <div class="section">
+      <h2 class="section-title">Supporting Colors</h2>
+      <p class="section-desc">For specific use cases like success states, categories, or visual variety.</p>
+      <div class="color-row">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #4A6B4A;"></div>
+          <div class="color-name">Success</div>
+          <div class="color-hex">#4A6B4A</div>
+          <div class="color-usage">Success messages</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #E8EDE5;"></div>
+          <div class="color-name">Success Light</div>
+          <div class="color-hex">#E8EDE5</div>
+          <div class="color-usage">Success backgrounds</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #8B6B5A;"></div>
+          <div class="color-name">Warning</div>
+          <div class="color-hex">#8B6B5A</div>
+          <div class="color-usage">Warnings</div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #6B5A7A;"></div>
+          <div class="color-name">Alt Accent</div>
+          <div class="color-hex">#6B5A7A</div>
+          <div class="color-usage">Secondary category</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Component Examples -->
+    <div class="section">
+      <h2 class="section-title">Component Examples</h2>
+      <p class="section-desc">How the palette works in real UI elements.</p>
+
+      <div class="examples">
+        <div class="example-card">
+          <div class="example-title">Buttons</div>
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-subtle">Subtle</button>
+        </div>
+
+        <div class="example-card">
+          <div class="example-title">Typography</div>
+          <div class="text-heading">Heading Text</div>
+          <div class="text-body">Body text looks like this. It's warm and easy to read.</div>
+          <div class="text-muted">Muted caption text for secondary info.</div>
+          <div class="text-accent">Accent text for emphasis.</div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-title">Links & Badges</div>
+          <p>Here is a <a href="#" class="link">text link</a> in context.</p>
+          <div style="margin-top: 1rem;">
+            <span class="badge badge-primary">Healthcare</span>
+            <span class="badge badge-success">Digital Health</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-title">Card Hover State</div>
+          <div class="card-demo">
+            <div class="text-heading" style="font-size: 1.125rem;">Client Name</div>
+            <div class="text-muted">Hover to see border change</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Tailwind Config -->
+    <div class="section">
+      <h2 class="section-title">Tailwind Config</h2>
+      <p class="section-desc">Copy this into your tailwind.config.js to use the palette.</p>
+
+      <div class="code-block">
+<span class="code-comment">// tailwind.config.js</span>
+colors: {
+  <span class="code-key">primary</span>: {
+    <span class="code-key">50</span>: <span class="code-string">'#F5E8ED'</span>,
+    <span class="code-key">100</span>: <span class="code-string">'#E8CDD8'</span>,
+    <span class="code-key">200</span>: <span class="code-string">'#D4B8C4'</span>,
+    <span class="code-key">300</span>: <span class="code-string">'#B07A94'</span>,
+    <span class="code-key">400</span>: <span class="code-string">'#944066'</span>,
+    <span class="code-key">500</span>: <span class="code-string">'#7B2D52'</span>,  <span class="code-comment">// Main accent</span>
+    <span class="code-key">600</span>: <span class="code-string">'#5E2240'</span>,
+    <span class="code-key">700</span>: <span class="code-string">'#471832'</span>,
+    <span class="code-key">800</span>: <span class="code-string">'#331224'</span>,
+    <span class="code-key">900</span>: <span class="code-string">'#220C18'</span>,
+  },
+  <span class="code-key">cream</span>: {
+    <span class="code-key">50</span>: <span class="code-string">'#FFFDFB'</span>,   <span class="code-comment">// Cards, modals</span>
+    <span class="code-key">100</span>: <span class="code-string">'#FAF8F6'</span>,  <span class="code-comment">// Page background</span>
+    <span class="code-key">200</span>: <span class="code-string">'#F3EFEB'</span>,  <span class="code-comment">// Alt sections</span>
+    <span class="code-key">300</span>: <span class="code-string">'#E8E4E0'</span>,  <span class="code-comment">// Borders</span>
+    <span class="code-key">400</span>: <span class="code-string">'#D9D4CE'</span>,  <span class="code-comment">// Disabled</span>
+  },
+  <span class="code-key">text</span>: {
+    <span class="code-key">primary</span>: <span class="code-string">'#2D2A26'</span>,
+    <span class="code-key">secondary</span>: <span class="code-string">'#4A4744'</span>,
+    <span class="code-key">muted</span>: <span class="code-string">'#6B6660'</span>,
+    <span class="code-key">subtle</span>: <span class="code-string">'#9B9590'</span>,
+  },
+  <span class="code-key">success</span>: {
+    <span class="code-key">DEFAULT</span>: <span class="code-string">'#4A6B4A'</span>,
+    <span class="code-key">light</span>: <span class="code-string">'#E8EDE5'</span>,
+  },
+}
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -24,13 +24,13 @@ function getInitials(name: string): string {
 }
 
 function getColorFromName(name: string): string {
+  // Berry wine inspired color variations
   const colors = [
     'bg-primary-500',
-    'bg-purple-500',
-    'bg-blue-500',
-    'bg-teal-500',
-    'bg-indigo-500',
-    'bg-pink-500',
+    'bg-primary-400',
+    'bg-primary-600',
+    'bg-primary-300',
+    'bg-primary-700',
   ];
   const index = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return colors[index % colors.length];
@@ -44,7 +44,7 @@ export default function ClientLogo({ name, logoUrl, size = 'md' }: ClientLogoPro
   if (showFallback) {
     return (
       <div
-        className={`${sizeClasses[size]} ${getColorFromName(name)} rounded-full flex items-center justify-center text-white font-semibold`}
+        className={`${sizeClasses[size]} ${getColorFromName(name)} rounded-lg flex items-center justify-center text-white font-semibold`}
       >
         {getInitials(name)}
       </div>

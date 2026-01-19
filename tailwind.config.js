@@ -8,35 +8,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Warm, personal palette
+        // Berry Wine palette
         primary: {
-          50: '#fdf8f6',
-          100: '#f9ede8',
-          200: '#f3ddd3',
-          300: '#e9c4b4',
-          400: '#dba18a',
-          500: '#c9785c',
-          600: '#b85d42',
-          700: '#9a4a35',
-          800: '#7f3f30',
-          900: '#6a372c',
+          50: '#F5E8ED',
+          100: '#E8CDD8',
+          200: '#D4B8C4',
+          300: '#B07A94',
+          400: '#944066',
+          500: '#7B2D52',  // Main accent
+          600: '#5E2240',
+          700: '#471832',
+          800: '#331224',
+          900: '#220C18',
         },
         cream: {
-          50: '#fefdfb',
-          100: '#fdfaf5',
-          200: '#faf5ec',
-          300: '#f5ece0',
-          400: '#ebe0d0',
+          50: '#FFFDFB',   // Cards, modals
+          100: '#FAF8F6',  // Page background
+          200: '#F3EFEB',  // Alt sections
+          300: '#E8E4E0',  // Borders
+          400: '#D9D4CE',  // Disabled
         },
-        sage: {
-          500: '#7c9082',
-          600: '#668572',
-          700: '#526b5c',
+        text: {
+          primary: '#2D2A26',
+          secondary: '#4A4744',
+          muted: '#6B6660',
+          subtle: '#9B9590',
+        },
+        success: {
+          DEFAULT: '#4A6B4A',
+          light: '#E8EDE5',
         },
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-lora)', 'Georgia', 'serif'],
+        sans: ['var(--font-libre-franklin)', 'system-ui', 'sans-serif'],
       },
     },
   },

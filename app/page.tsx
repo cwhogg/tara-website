@@ -13,10 +13,10 @@ export default function Home() {
       <FeaturedClients />
 
       {/* Personal CTA Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-600 to-primary-700 relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-500 to-primary-700 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-800 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl opacity-20" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-800 rounded-full blur-3xl opacity-30" />
 
         <div className="container-custom relative">
           <div className="max-w-3xl mx-auto text-center">
@@ -29,7 +29,7 @@ export default function Home() {
             </p>
             <Link
               href="mailto:tara@tarawagnerpr.com"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full text-primary-700 bg-white hover:bg-cream-100 transition-all duration-300 hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-primary-600 bg-white hover:bg-cream-100 transition-all duration-300 hover:shadow-xl"
             >
               Get in Touch
             </Link>

@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Source_Sans_3 } from 'next/font/google';
+import { Lora, Libre_Franklin } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import './globals.css';
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-lora',
   display: 'swap',
 });
 
-const sourceSans = Source_Sans_3({
+const libreFranklin = Libre_Franklin({
   subsets: ['latin'],
-  variable: '--font-source-sans',
+  variable: '--font-libre-franklin',
   display: 'swap',
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang="en" className={`${lora.variable} ${libreFranklin.variable}`}>
       <body className="font-sans flex flex-col min-h-screen">
         <Navigation />
         <div className="flex-grow">{children}</div>

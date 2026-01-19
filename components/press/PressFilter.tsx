@@ -14,10 +14,10 @@ export default function PressFilter({ activeFilter, onFilterChange }: PressFilte
         <button
           key={filter}
           onClick={() => onFilterChange(filter)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+          className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
             activeFilter === filter
-              ? 'bg-primary-600 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ? 'bg-primary-500 text-white'
+              : 'bg-cream-200 text-text-secondary hover:bg-cream-300'
           }`}
         >
           {filter}

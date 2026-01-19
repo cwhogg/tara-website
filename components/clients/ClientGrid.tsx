@@ -36,7 +36,7 @@ export default function ClientGrid() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
       </div>
     );
   }
@@ -49,10 +49,10 @@ export default function ClientGrid() {
           <button
             key={category}
             onClick={() => setFilter(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
               filter === category
-                ? 'bg-primary-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-primary-500 text-white'
+                : 'bg-cream-200 text-text-secondary hover:bg-cream-300'
             }`}
           >
             {category}
@@ -68,7 +68,7 @@ export default function ClientGrid() {
       </div>
 
       {filteredClients.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-text-muted">
           No clients found for this category.
         </div>
       )}

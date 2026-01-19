@@ -26,13 +26,13 @@ export default function FeaturedClients() {
   if (clients.length === 0) return null;
 
   return (
-    <section className="py-20 lg:py-28 bg-cream-100">
+    <section className="py-20 lg:py-28 bg-cream-200">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-text-primary mb-6">
             Companies I&apos;ve Worked With
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl text-text-secondary leading-relaxed">
             From early-stage startups to public companies, I&apos;ve had the privilege
             of partnering with teams who are reimagining healthcare.
           </p>
@@ -42,10 +42,10 @@ export default function FeaturedClients() {
           {clients.map((client) => (
             <div
               key={client.id}
-              className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center h-32 border border-cream-300 hover:border-primary-300 hover:shadow-lg transition-all duration-300 group"
+              className="bg-cream-50 rounded-xl p-6 flex flex-col items-center justify-center h-32 border border-cream-300 hover:border-primary-200 hover:shadow-lg transition-all duration-300 group"
             >
               <ClientLogo name={client.name} logoUrl={client.logoUrl} size="md" />
-              <span className="text-gray-700 font-medium text-center text-sm mt-3 group-hover:text-primary-700 transition-colors">
+              <span className="text-text-secondary font-medium text-center text-sm mt-3 group-hover:text-primary-500 transition-colors">
                 {client.name}
               </span>
             </div>
@@ -55,7 +55,7 @@ export default function FeaturedClients() {
         <div className="text-center">
           <Link
             href="/clients"
-            className="inline-flex items-center gap-2 text-primary-700 font-medium hover:text-primary-800 transition-colors group"
+            className="inline-flex items-center gap-2 text-primary-500 font-medium hover:text-primary-600 transition-colors group"
           >
             View all clients
             <svg
