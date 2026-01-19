@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tara Wagner - Design Directions</title>
+
+  <!-- Fonts for all directions -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Navigation between directions */
+    .direction-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .direction-nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .direction-nav a:hover {
+      color: white;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .direction-nav a.active {
+      background: white;
+      color: black;
+    }
+
+    /* Section titles */
+    .direction-intro {
+      padding: 8rem 2rem 3rem;
+      text-align: center;
+      background: #1a1a1a;
+    }
+
+    .direction-intro h2 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .direction-intro h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .direction-intro p {
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .design-specs {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .design-specs span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ==========================================
+       DIRECTION A: Soft Editorial
+       ========================================== */
+    .direction-a {
+      --bg: #FDFBF7;
+      --bg-alt: #F5F1EA;
+      --text: #2C2C2C;
+      --text-muted: #6B6B6B;
+      --accent: #7C8B6F;
+      --accent-light: #E8EBE4;
+      --warm: #D4C4B0;
+    }
+
+    .direction-a .hero {
+      background: var(--bg);
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .direction-a .hero-content {
+      padding: 6rem 4rem 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .direction-a .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .direction-a .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .direction-a .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .direction-a .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 440px;
+    }
+
+    .direction-a .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .direction-a .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .direction-a .btn-primary:hover {
+      background: #6B7A5F;
+      transform: translateY(-2px);
+    }
+
+    .direction-a .btn-secondary {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.3s;
+    }
+
+    .direction-a .btn-secondary:hover {
+      gap: 0.75rem;
+    }
+
+    .direction-a .hero-image {
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direction-a .image-frame {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      bottom: 10%;
+      background: var(--warm);
+      border-radius: 200px 200px 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .direction-a .image-placeholder {
+      color: rgba(0,0,0,0.3);
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    .direction-a .floating-card {
+      position: absolute;
+      bottom: 15%;
+      left: -2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .direction-a .floating-card .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .direction-a .floating-card .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .direction-a .organic-shape {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 100px;
+      height: 100px;
+      background: var(--accent-light);
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      opacity: 0.6;
+    }
+
+    /* ==========================================
+       DIRECTION B: Modern Warmth
+       ========================================== */
+    .direction-b {
+      --bg: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --text: #1F1F1F;
+      --text-muted: #777777;
+      --accent: #E07A5F;
+      --accent-soft: #FEF0EC;
+      --sand: #E8E4DE;
+    }
+
+    .direction-b .hero {
+      background: linear-gradient(180deg, var(--bg) 0%, #FFF 100%);
+      min-height: 100vh;
+      padding: 8rem 4rem 4rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .direction-b .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .direction-b .hero-content {
+      position: relative;
+    }
+
+    .direction-b .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    .direction-b .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .direction-b .hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: 3.5rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .direction-b .hero-title .highlight {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .direction-b .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .direction-b .hero-cta {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .direction-b .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(224, 122, 95, 0.3);
+    }
+
+    .direction-b .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(224, 122, 95, 0.4);
+    }
+
+    .direction-b .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid var(--sand);
+      transition: all 0.3s;
+    }
+
+    .direction-b .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .direction-b .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--sand);
+    }
+
+    .direction-b .stat {
+      text-align: left;
+    }
+
+    .direction-b .stat-number {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .direction-b .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .direction-b .hero-image {
+      position: relative;
+    }
+
+    .direction-b .image-container {
+      background: linear-gradient(135deg, var(--sand) 0%, var(--accent-soft) 100%);
+      border-radius: 24px;
+      aspect-ratio: 4/5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direction-b .image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(0,0,0,0.2);
+      font-size: 0.875rem;
+    }
+
+    .direction-b .floating-element {
+      position: absolute;
+      bottom: -1rem;
+      left: -1rem;
+      background: white;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .direction-b .client-logos {
+      display: flex;
+    }
+
+    .direction-b .client-logo {
+      width: 32px;
+      height: 32px;
+      background: var(--sand);
+      border-radius: 8px;
+      margin-left: -8px;
+      border: 2px solid white;
+    }
+
+    .direction-b .client-logo:first-child {
+      margin-left: 0;
+    }
+
+    .direction-b .client-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .direction-b .client-text strong {
+      color: var(--text);
+      display: block;
+    }
+
+    .direction-b .decorative-circle {
+      position: absolute;
+      top: -2rem;
+      right: -2rem;
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--accent-soft);
+      border-radius: 50%;
+    }
+
+    /* ==========================================
+       DIRECTION C: Refined Minimal
+       ========================================== */
+    .direction-c {
+      --bg: #FFFFFF;
+      --bg-alt: #F7F7F5;
+      --text: #1A1A1A;
+      --text-muted: #888888;
+      --accent: #2D3436;
+      --highlight: #C4A77D;
+    }
+
+    .direction-c .hero {
+      background: var(--bg);
+      min-height: 100vh;
+      font-family: 'Manrope', sans-serif;
+      position: relative;
+    }
+
+    .direction-c .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .direction-c .hero-content {
+      padding: 10rem 6rem 4rem 8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .direction-c .hero-intro {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .direction-c .hero-intro::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--highlight);
+    }
+
+    .direction-c .hero-title {
+      font-family: 'Newsreader', serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .direction-c .hero-title .accent {
+      color: var(--highlight);
+    }
+
+    .direction-c .hero-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      max-width: 400px;
+    }
+
+    .direction-c .hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .direction-c .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 1.125rem 2.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      transition: all 0.3s;
+    }
+
+    .direction-c .btn-primary:hover {
+      background: var(--highlight);
+    }
+
+    .direction-c .btn-text {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .direction-c .btn-text::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--highlight);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .direction-c .btn-text:hover::after {
+      transform: scaleX(1);
+    }
+
+    .direction-c .hero-image-col {
+      background: var(--bg-alt);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direction-c .image-wrapper {
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, #E8E6E1 0%, #D4D0C8 100%);
+    }
+
+    .direction-c .image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(0,0,0,0.15);
+      font-size: 0.875rem;
+    }
+
+    .direction-c .experience-badge {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      transform: translateX(-50%);
+      background: var(--highlight);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .direction-c .experience-badge .number {
+      font-family: 'Newsreader', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .direction-c .experience-badge .text {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .direction-c .vertical-text {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: rotate(-90deg) translateX(50%);
+      transform-origin: right center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .direction-c .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+
+    .direction-c .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--highlight) 0%, transparent 100%);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 900px) {
+      .direction-a .hero,
+      .direction-b .hero-inner,
+      .direction-c .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .direction-a .hero-image,
+      .direction-c .hero-image-col {
+        display: none;
+      }
+
+      .direction-a .hero-content,
+      .direction-c .hero-content {
+        padding: 8rem 2rem 4rem;
+      }
+
+      .direction-a .hero-title,
+      .direction-c .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .direction-b .hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+
+      .direction-b .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .direction-b .hero-image {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="direction-nav">
+    <a href="#direction-a" class="active">A: Soft Editorial</a>
+    <a href="#direction-b">B: Modern Warmth</a>
+    <a href="#direction-c">C: Refined Minimal</a>
+  </nav>
+
+  <!-- ==========================================
+       DIRECTION A: Soft Editorial
+       ========================================== -->
+  <section id="direction-a">
+    <div class="direction-intro">
+      <h2>Direction A</h2>
+      <h1 style="font-family: 'Cormorant Garamond', serif;">Soft Editorial</h1>
+      <p>Magazine-inspired elegance with organic shapes. Warm, sophisticated, and timeless with a gentle sage accent.</p>
+      <div class="design-specs">
+        <span><span class="color-dot" style="background: #FDFBF7;"></span> Warm Ivory</span>
+        <span><span class="color-dot" style="background: #7C8B6F;"></span> Sage Green</span>
+        <span>Cormorant Garamond + DM Sans</span>
+      </div>
+    </div>
+
+    <div class="direction-a">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-label">Healthcare Communications</div>
+          <h1 class="hero-title">
+            Hi, I'm Tara.<br>
+            I tell stories<br>
+            <em>that matter.</em>
+          </h1>
+          <p class="hero-subtitle">
+            For over two decades, I've helped healthcare innovators share their vision with the world—translating complex ideas into narratives that resonate.
+          </p>
+          <div class="hero-cta">
+            <a href="#" class="btn-primary">Let's Talk</a>
+            <a href="#" class="btn-secondary">View My Work →</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="organic-shape"></div>
+          <div class="image-frame">
+            <div class="image-placeholder">
+              Photo of Tara<br>
+              <small>/public/tara.jpg</small>
+            </div>
+          </div>
+          <div class="floating-card">
+            <div class="number">20+</div>
+            <div class="label">Years in PR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DIRECTION B: Modern Warmth
+       ========================================== -->
+  <section id="direction-b">
+    <div class="direction-intro">
+      <h2>Direction B</h2>
+      <h1 style="font-family: 'Fraunces', serif;">Modern Warmth</h1>
+      <p>Contemporary and friendly with a soft coral accent. Clean geometry meets approachable warmth—feels like a modern consumer brand.</p>
+      <div class="design-specs">
+        <span><span class="color-dot" style="background: #FAF8F5;"></span> Soft Cream</span>
+        <span><span class="color-dot" style="background: #E07A5F;"></span> Warm Coral</span>
+        <span>Fraunces + Outfit</span>
+      </div>
+    </div>
+
+    <div class="direction-b">
+      <div class="hero">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-badge">Healthcare PR Consultant</div>
+            <h1 class="hero-title">
+              Stories that move<br>
+              people <span class="highlight">forward.</span>
+            </h1>
+            <p class="hero-subtitle">
+              I'm Tara—a healthcare communications strategist with 20+ years helping mission-driven companies connect with the audiences who matter most.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn-primary">Work With Me</a>
+              <a href="#" class="btn-secondary">See Clients</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Clients Served</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">100s</div>
+                <div class="stat-label">Stories Told</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="decorative-circle"></div>
+            <div class="image-container">
+              <div class="image-placeholder">
+                Photo of Tara<br>
+                <small>/public/tara.jpg</small>
+              </div>
+            </div>
+            <div class="floating-element">
+              <div class="client-logos">
+                <div class="client-logo"></div>
+                <div class="client-logo"></div>
+                <div class="client-logo"></div>
+                <div class="client-logo"></div>
+              </div>
+              <div class="client-text">
+                <strong>Trusted by 50+</strong>
+                healthcare innovators
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DIRECTION C: Refined Minimal
+       ========================================== -->
+  <section id="direction-c">
+    <div class="direction-intro">
+      <h2>Direction C</h2>
+      <h1 style="font-family: 'Newsreader', serif;">Refined Minimal</h1>
+      <p>Confident and premium with strong editorial typography. Maximum impact through restraint—every element is intentional.</p>
+      <div class="design-specs">
+        <span><span class="color-dot" style="background: #FFFFFF; border-color: #ddd;"></span> Pure White</span>
+        <span><span class="color-dot" style="background: #C4A77D;"></span> Warm Gold</span>
+        <span>Newsreader + Manrope</span>
+      </div>
+    </div>
+
+    <div class="direction-c">
+      <div class="hero">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-intro">Healthcare Communications</div>
+            <h1 class="hero-title">
+              Telling the stories<br>
+              that change<br>
+              <span class="accent">healthcare.</span>
+            </h1>
+            <p class="hero-subtitle">
+              I'm Tara Wagner. For two decades, I've partnered with healthcare innovators to craft narratives that resonate—with patients, providers, and the press.
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn-primary">Get in Touch</a>
+              <a href="#" class="btn-text">View Portfolio</a>
+            </div>
+          </div>
+          <div class="hero-image-col">
+            <div class="image-wrapper">
+              <div class="image-placeholder">
+                Photo of Tara<br>
+                <small>/public/tara.jpg</small>
+              </div>
+            </div>
+            <div class="experience-badge">
+              <div class="number">20+</div>
+              <div class="text">Years</div>
+            </div>
+            <div class="vertical-text">Healthcare PR Specialist</div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+          Scroll
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Simple smooth scroll and nav highlighting
+    document.querySelectorAll('.direction-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        document.querySelectorAll('.direction-nav a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Update nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.direction-nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

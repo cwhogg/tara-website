@@ -1,5 +1,6 @@
 import Hero from '@/components/home/Hero';
 import ExpertiseSection from '@/components/home/ExpertiseSection';
+import ServicesPreview from '@/components/home/ServicesPreview';
 import FeaturedClients from '@/components/home/FeaturedClients';
 import Link from 'next/link';
 
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <Hero />
       <ExpertiseSection />
+      <ServicesPreview />
       <FeaturedClients />
 
       {/* Personal CTA Section */}
